@@ -6,7 +6,15 @@ struct Element {
   var name: String
 
   /// Any raw string data not associated with any sub-elements.
-  var content: String = ""
+  var _content: String = ""
+  var content: String {
+    get {
+      return _content
+    }
+    set (newValue){
+      _content = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+  }
 
   /// A list of all sub-elements contained within this OFX element.
   var children: [Element] = []

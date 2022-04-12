@@ -28,7 +28,9 @@ let package = Package(
             name: "SwiftOFXTests",
             dependencies: ["SwiftOFX", "Reggie"],
             resources: [
-                        .copy("Resources/example.ofx")]
+                        .copy("Resources/example.ofx"),
+                        .copy("Resources/barclays.ofx")
+            ]
         )
     ]
 )

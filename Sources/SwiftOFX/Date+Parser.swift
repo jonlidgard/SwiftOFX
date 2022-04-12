@@ -19,6 +19,8 @@ extension Date {
   internal init?(string: String) {
     guard string != "" else { return nil }
     let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
     let maybeDate = formats.reduce(nil as Date?) { result, format in
       guard result == nil else { return result }
       formatter.dateFormat = format
