@@ -19,15 +19,16 @@ public struct Institute: Information {
   static let label: String = "FI"
 
   /// The name of the institution.
-  public var name: String
+  public var name: String = ""
 
   /// An identifier for this specific institution.
-  public var id: Identifier
+  public var id: Identifier = ""
 
   init?(parent element: Element) {
-    guard let element = element[Institute.label] else { return nil }
-    name = element["ORG"]?.content ?? ""
-    id = element["FID"]?.content ?? ""
+    if let element = element[Institute.label] {
+      name = element["ORG"]?.content ?? ""
+      id = element["FID"]?.content ?? ""
+    }
   }
 }
 

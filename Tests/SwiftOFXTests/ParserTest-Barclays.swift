@@ -1,7 +1,7 @@
 import XCTest
 @testable import SwiftOFX
 
-class ParserTest-Barclays: XCTestCase {
+class ParserTest_Barclays: XCTestCase {
 
   var data: Data!
 
