@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "reggie",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stevebrun/Reggie.git",
+      "state" : {
+        "revision" : "3b2d8140acedd6f1d1429c7dcc7d8dd63f4b36de",
+        "version" : "0.2.3"
+      }
+    }
+  ],
+  "version" : 2
+}

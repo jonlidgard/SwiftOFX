@@ -12,6 +12,7 @@ let package = Package(
             targets: ["SwiftOFX"]),
     ],
     dependencies: [
+      .package(url: "https://github.com/stevebrun/Reggie.git", from: "0.2.3")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -20,9 +21,14 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftOFX",
-            dependencies: []),
+            dependencies: ["Reggie"]
+            
+          ),
         .testTarget(
             name: "SwiftOFXTests",
-            dependencies: ["SwiftOFX"]),
+            dependencies: ["SwiftOFX", "Reggie"],
+            resources: [
+                        .copy("Resources/example.ofx")]
+        )
     ]
 )
